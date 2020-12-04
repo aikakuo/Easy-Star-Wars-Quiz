@@ -1,18 +1,24 @@
 var startBtn = document.querySelector('.start_btn')
 var rulesBox = document.querySelector('.rules_b')
-var nextBtn = document.querySelectorAll('.buttons .next')
+var nextBtn = document.querySelector('.next')
 var queBox = document.querySelector('.question_box')
-var exitBtn = document.querySelector('.buttons .quit_game')
+var exitBtn = document.querySelector('.quit_game')
 
 startBtn.addEventListener( "click", function(){
-   rulesBox.classList.add("active_rules")
-   quizBox.classList.add("active_rules")
+   rulesBox.classList.add("active_rules")  
 })
-
 nextBtn.addEventListener( "click", function(){
-       queBox.classList.add("active")
-    //    quizBox.classList.add("active_rules")
-    })
+    queBox.classList.add("active")  
+ })
+
+ exitBtn.addEventListener( "click", function(){
+    rulesBox.classList.remove("active_rules")  
+ })
+
+
+
+
+
 
 
 // // // time to count down

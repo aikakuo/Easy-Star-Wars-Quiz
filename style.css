@@ -31,7 +31,8 @@ body {
     border-radius: 5px;
 
 }
-.rules_b.active_rules {
+.rules_b.active_rules,
+.question_box.active {
     z-index: 5;
     opacity: 1;
     pointer-events: auto;
@@ -131,13 +132,7 @@ body {
 
 }
 
-.question_box.active {
-    z-index: 5;
-    opacity: 1;
-    pointer-events: auto;
-    transform: translate(-50%, -50%) scale(1);
-    display: block;
-}
+
 
 .questions_title
 {
