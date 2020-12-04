@@ -31,7 +31,7 @@
 </div>
 <div class="buttons">
     <button id="qbutton" class="quit_game">Exit</button>
-    <button id="nextbtn" class="next">Next</button>
+    <button class="next">Next</button>
 </div>
 </div>
 </div>
@@ -43,10 +43,11 @@
 
 <section>
 <div class="question_box">
-    <div class="active_questions">
+    <div class="active">
+    
     <div class="score">Score : <span>0 </span></div>
     <div class="timer">
-        <div class="timer_counts">
+    <div class="timer_counts">
     <div id="set-timer">Time Left : <span>60</span>
         
         </div>
@@ -54,8 +55,9 @@
     </div>
     <div class="questions_title">
   <span> "According to Master Yoda, how many Sith are always out there?" </span></div>
-<div class="options_list">
-<div class="options_box">
+  <div class="options_box">
+  <div class="options_list">
+
 <div class="option"><span>1</span></div>
 <div class="option">
 <span>2</span></div>
@@ -66,14 +68,14 @@
 
 <div class="buttons">
     <div class="active_next">
-    <button class="next">Next</button>
+    <button class="next">Next Question</button>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</div>
+
 </section>
 
 
@@ -82,6 +84,18 @@
     
 </footer>
 
+<!--Results Box-->
+<div class="result_box">
+<div class="final_text">
+    The end of quiz
+</div>
+<div class="last_score"><span>try again</span></div>
+<div class="buttons">
+<button class="restart">Try Again</button>
+<button class="qbutton">Exit</button>
+
+</div>
+</div>
 
     <script src="js.js"></script>
 </body>
