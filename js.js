@@ -30,11 +30,18 @@ nextBtn.addEventListener( "click", function(){
  exitBtn.addEventListener( "click", function(){
     rulesBox.classList.remove("active_rules")  
  })
-//next question button questions_box must change 5 times 
+
+
+ //next question button questions_box must change 5 times 
 nextQue.addEventListener( "click", function(){
+   if (queCount < questions.length -1) {
    queCount++
    showQuestions(queCount)//shows the questions function
 
+   } else {
+      console.log('complete')
+   }
+   
 }) 
  
 
@@ -45,7 +52,7 @@ function showQuestions(index) {
 //questions
   var queText = document.getElementById("questions-title");
   var optionsList = document.querySelector(".options_list")
-  var queTags = "<span>" + questions[index].question + "</span>";
+  var queTags = "<span>" + questions[index].count +' . '+ questions[index].question + "</span>";
 //options list
 //targeting tags in DOM
   var optionTags = '<div class="option">' + questions[index].options[0] + '<span></span></div>' + 
