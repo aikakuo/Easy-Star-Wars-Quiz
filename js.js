@@ -12,8 +12,10 @@ var startBtn = document.querySelector('.start_btn')
 var rulesBox = document.querySelector('.rules_b')
 var nextBtn = document.querySelector('.next')
 var queBox = document.querySelector('.question_box')
+var score = document.querySelector('.score')
 var exitBtn = document.querySelector('.quit_game')
 var nextQue = document.querySelector('.next_question')
+
 var queCount = 0;
 var score = 0
 
@@ -36,18 +38,14 @@ nextBtn.addEventListener( "click", function(){
 nextQue.addEventListener( "click", function(){
    if (queCount < questions.length -1) {
    queCount++
-   showQuestions(queCount)//shows the questions function
+   showQuestions(queCount)}//shows the questions function
 
-   } else {
+   else {
       console.log('complete')
    }
    
 }) 
  
-
-
-
-
 function showQuestions(index) {
 //questions
   var queText = document.getElementById("questions-title");
@@ -60,8 +58,46 @@ function showQuestions(index) {
 
   optionsList.innerHTML = optionTags 
   queText.innerHTML = queTags
-  
+
+var option = optionsList.querySelectorAll('.option')
+for (var i = 0; i < option.length; i++)
+option[i].setAttribute('onclick', 'showAnswer(this)')  
 }
+
+function showAnswer() {
+   var usersChoice = answer.textContent;
+   var correctAnswer = questions[queCount].answer;
+   var allOptions = optionsList.children.length
+      if(usersChoice === correctAnswer) {
+         answer.classList.add('correct');
+         console.log('answer is correct')
+      } 
+      // else {
+      //    answer.classList.add('incorrect');
+      //    console.log(' answer is incorrect')
+      // }
+}
+
+// for (var i = 0; i < allOptions; i++) {
+//    optionsList.children[i].classList.add('disabled')
+// }
+
+
+
+//  function showScore() {
+
+//    var totalScore = queBox.querySelector(".total_score")
+//    var scoreTags = '<div class="score">Score :<span>' + queCount + '</span>/<span>' + questions.length + '</span></div>'
+   
+//    totalScore.innerHTML = scoreTags
+//  }
+
+
+
+
+
+
+
 //questions array with options and answers
 var questions = [{
    count: 1,
@@ -127,5 +163,5 @@ var questions = [{
 // }, 1000) 
 
 
-
+//for name submit use method .trim it will remove white space
 

@@ -1,102 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Easy Star Wars Quiz</title>
 </head>
+
 <body>
-<!--Start Button-->
-<div class="start">
-    <button class="start_btn">Start Quiz</button></div>
-<!--Rules-->
-<div class="rules_b">
-    <div class="quizb">
-        <div class="title">
-        <h2>Easy Star Wars Quiz</h2>
-        
+    <!--Start Button-->
+    <div class="start">
+        <button class="start_btn">Start Quiz</button></div>
+    <!--Rules-->
+    <div class="rules_b">
+        <div class="quizb">
+            <div class="title">
+                <h2>Easy Star Wars Quiz</h2>
+
+            </div>
         </div>
+        <div class="rules_title">
+
+            <span>Quiz rules</span>
         </div>
-<div class="rules_title">
-
-<span>Quiz rules</span>
-</div>
-<div class="active_rules">
-<div class="rules_list">
-<div class="rules">1. You have <span>60 seconds</span> to complete the quiz</div>
-<div class="rules">2. Earn points basis on your correct answers</div>
-<div class="rules">3. Find out who got the highest score</div>
-<div class="rules"></div>
-</div>
-<div class="buttons">
-    <button id="qbutton" class="quit_game">Exit</button>
-    <button class="next">Next</button>
-</div>
-</div>
-</div>
-
-<!--quiz title -->
-
-<!-- Questions Box -->
-
-
-
-<div class="question_box">
-<div class="active">
-      
-    <div class="buttons">
-        <div class="active_next"> 
-        <button class="next_question">Next Question</button>
-        </div>
-        </div>
-    
-    <div class="score">Score : <span>0 </span></div>
-    <div class="timer">
-    <div class="timer_counts">
-    <div id="set-timer">Time Left : <span>60</span>
-        
-        </div>
+        <div class="active_rules">
+            <div class="rules_list">
+                <div class="rules">1. You have <span>60 seconds</span> to complete the quiz</div>
+                <div class="rules">2. Earn points basis on your correct answers</div>
+                <div class="rules">3. Find out who got the highest score</div>
+                <div class="rules"></div>
+            </div>
+            <div class="buttons">
+                <button id="qbutton" class="quit_game">Exit</button>
+                <button class="next">Next</button>
+            </div>
         </div>
     </div>
-<div id="questions-title" class="questions_title">
-  <span></span></div>
-<div class="options_box">
-<div class="options_list">
 
-<div class="option"><span></span></div>
-<div class="option">
-<span></span></div>
-<div class="option">
-<span></span></div>
-<div class="option">
-<span></span></div>
+    <!--quiz title -->
+
+    <!-- Questions Box -->
 
 
 
-
-</div>  
-</div>
-</div>
-</div>
-</div>
-</div>
+    <div class="question_box">
+        <div class="active">
 
 
-<!--Results Box-->
-<div class="result_box">
-<div class="active_results">
-<div class="final_text">
-    The end of quiz
-</div>
-<div class="last_score"><span>try again</span></div>
-<div class="buttons">
-<button class="restart">Try Again</button>
-<button class="qbutton">Exit</button>
-</div>
-</div>
-</div>
-    <!-- <script src="questions.js"></script> --> 
+            <div class="total_score">
+                <div class="score">Score : <span>0</span></div>
+            </div>
+            <div class="timer">
+                <div class="timer_counts">
+                    <div id="set-timer">Time Left : <span>60</span>
+
+                    </div>
+                </div>
+            </div>
+            <div id="questions-title" class="questions_title">
+                <span></span></div>
+            <div class="options_box">
+                <div class="options_list">
+                    <div class="answer">
+                        <div class="incorrect">
+                            <div class="option"><span></span></div>
+                            <div class="option">
+                                <span></span></div>
+                            <div class="option">
+                                <span></span></div>
+                            <div class="option">
+                                <span></span></div>
+
+                                
+                                <!--ANSWER AND WRONG ANSWER DIV'S-->
+                            </div>
+                        </div>
+                        
+                    </div>
+                            <div class="buttons">
+                                <div class="active_next">
+                                    <button class="next_question">Next Question</button>
+                                </div>
+                            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+    <!--Results Box-->
+    <div class="result_box">
+        <div class="active_results">
+            <div class="final_text">
+                The end of quiz
+            </div>
+            <div class="last_score"><span>try again</span></div>
+            <div class="buttons">
+                <button class="restart">Try Again</button>
+                <button class="qbutton">Exit</button>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="questions.js"></script> -->
     <script src="js.js"></script>
 </body>
+
 </html>

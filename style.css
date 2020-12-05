@@ -157,7 +157,7 @@ body {
 .timer_counts {
     font-size: 16px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding: 5px;
 }
 .score span {
@@ -202,6 +202,17 @@ text-align: center;
 font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+.options_list .option.correct {
+ color:white;
+ background: green;
+}
 
+.options_list .option.incorrect {
+    color: white;
+    background: red;
 
+}
 
+.options_box .option.disabled {
+    pointer-events: none;
+}
