@@ -4,17 +4,86 @@ var nextBtn = document.querySelector('.next')
 var queBox = document.querySelector('.question_box')
 var exitBtn = document.querySelector('.quit_game')
 
+var queCount = 0;
+
+
+//start game 
 startBtn.addEventListener( "click", function(){
    rulesBox.classList.add("active_rules")  
 })
+//next button into the quiz
 nextBtn.addEventListener( "click", function(){
-    queBox.classList.add("active")  
+    queBox.classList.add("active")
+    showQuestions(3)  
  })
-
+//exit the game goes back to start page
  exitBtn.addEventListener( "click", function(){
     rulesBox.classList.remove("active_rules")  
  })
+//next question button questions_box must change 5 times 
 
+//score page 
+
+
+//questions list 
+//wrong or correct answer 
+
+function showQuestions(index) {
+  var queText = document.getElementById("questions-title");
+  var optionsList = document.querySelector(".options_list")
+  var queTags = "<span>" + questions[index].question + "</span>";
+
+  var optionTags = '<div class="option">' + questions[index].options[0] + '<span></span></div>' + 
+  '<div class="option">' + questions[index].options[1] + '<span></span></div>' + '<div class="option">' + questions[index].options[2] + '<span></span></div>' + '<div class="option">' + questions[index].options[3] + '<span></span></div>'
+
+  optionsList.innerHTML = optionTags
+  queText.innerHTML = queTags
+  
+}
+
+var questions = [{
+   count: 1,
+   question: "According to Master Yoda, how many Sith are always out there?",
+   options: [
+        '1', '2', '3', '4'],
+   answer: '2'
+},
+{  
+   count: 2,
+   question: "Whose lightsaber did Luke Skywalker receive from Obi-Wan?",
+   options: [
+       'Anakin Skywalker', 'Yoda', 'Obi-Wan Kenobi', 'Obi-Wan had extra'],
+   answer: 'Anakin Skywalker'
+},
+{  count: 3,
+   question: "Who played Princess Leia?",
+   options: [
+        'Gillian Anderson',
+        'Sigourney Weaver',
+        'Linda Hamilton',
+        'Carrie Fisher'],
+   answer: 'Carrie Fisher'
+},
+{   count: 4,
+   question: "Which of these movies is the one where Luke finds out Vader is his father?",
+   options: [ 'Return of the Jedi',
+       'The Empire Strikes Back',
+      ' The Force Awakens',
+       'Attack of the Clones'],
+       answer:'The Empire Strikes Back'
+},
+{
+   count: 5,
+   question: "Who is the only non Jedi in the original Star Wars trilogy to use a lightsaber?",
+   options: [ 'Han Solo',
+       'Chewbaca',
+      ' R2-D2',
+       'C-3PO'],
+       answer:'Han Solo'
+}]
+// function selectAnswer {
+
+// }
 
 
 
@@ -32,7 +101,7 @@ nextBtn.addEventListener( "click", function(){
 //     var timesup = 0
 //     if(count==timesup){
 //         return count;
-// //     }
+//      }
 // }, 1000) 
 
 

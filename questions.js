@@ -1,3 +1,5 @@
+//questions array with options and answers 
+
 var questions = [{
     count: 1,
     question: "According to Master Yoda, how many Sith are always out there?",
@@ -20,28 +22,24 @@ var questions = [{
          'Linda Hamilton',
          'Carrie Fisher'],
     answer: 'Carrie Fisher'
+},
+{   count: 4,
+    question: "Which of these movies is the one where Luke finds out Vader is his father?",
+    options: [ 'Return of the Jedi',
+        'The Empire Strikes Back',
+       ' The Force Awakens',
+        'Attack of the Clones'],
+        answer:'The Empire Strikes Back'
+},{
+    count: 5,
+    question: 'Who is the only non Jedi in the original Star Wars trilogy to use a lightsaber?',
+    options: ['Han Solo',
+   ' Chewbaca',
+   'R2-D2',
+   'C-3PO',
+   answer: 'Han Solo']
 }]
 
-
-
-
-
-
-
-
-
-
-
-
-
-// Which of these movies is the one where Luke finds out Vader is his father?
-
-// a: Return of the Jedi
-// b:The Empire Strikes Back
-// c:The Force Awakens
-// d:Attack of the Clones
-
-// Answer: The Empire Strikes Back
 
 // Who built C-3PO?
 // a:Luke
