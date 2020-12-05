@@ -1,11 +1,21 @@
+//when start button pressed onclick function turns page to rules 
+//set up timer that counts down from 60 sec
+// set up score function
+// set up quiz box with questions 
+//once player choses answer set up on click function
+//if answer correct add to score 
+// if answer incorrect show the correct answer 
+//if time is up game stops and user can save the game
+//check the score
+
 var startBtn = document.querySelector('.start_btn')
 var rulesBox = document.querySelector('.rules_b')
 var nextBtn = document.querySelector('.next')
 var queBox = document.querySelector('.question_box')
 var exitBtn = document.querySelector('.quit_game')
-
+var nextQue = document.querySelector('.next_question')
 var queCount = 0;
-
+var score = 0
 
 //start game 
 startBtn.addEventListener( "click", function(){
@@ -14,33 +24,38 @@ startBtn.addEventListener( "click", function(){
 //next button into the quiz
 nextBtn.addEventListener( "click", function(){
     queBox.classList.add("active")
-    showQuestions(3)  
+    showQuestions(0)//shows the questions function  
  })
 //exit the game goes back to start page
  exitBtn.addEventListener( "click", function(){
     rulesBox.classList.remove("active_rules")  
  })
 //next question button questions_box must change 5 times 
+nextQue.addEventListener( "click", function(){
+   queCount++
+   showQuestions(queCount)//shows the questions function
 
-//score page 
+}) 
+ 
 
 
-//questions list 
-//wrong or correct answer 
+
 
 function showQuestions(index) {
+//questions
   var queText = document.getElementById("questions-title");
   var optionsList = document.querySelector(".options_list")
   var queTags = "<span>" + questions[index].question + "</span>";
-
+//options list
+//targeting tags in DOM
   var optionTags = '<div class="option">' + questions[index].options[0] + '<span></span></div>' + 
   '<div class="option">' + questions[index].options[1] + '<span></span></div>' + '<div class="option">' + questions[index].options[2] + '<span></span></div>' + '<div class="option">' + questions[index].options[3] + '<span></span></div>'
 
-  optionsList.innerHTML = optionTags
+  optionsList.innerHTML = optionTags 
   queText.innerHTML = queTags
   
 }
-
+//questions array with options and answers
 var questions = [{
    count: 1,
    question: "According to Master Yoda, how many Sith are always out there?",
@@ -90,7 +105,7 @@ var questions = [{
 
 
 
-// // // time to count down
+// // // timer function
 
 // var div = document.getElementById('set-timer')
 // var count = 60
@@ -107,12 +122,3 @@ var questions = [{
 
 
 
-//when start button pressed onclick function turns page to rules 
-//set up timer that counts down from 60 sec
-// set up score function
-// set up quiz box with questions 
-//once player choses answer set up on click function
-//if answer correct add to score 
-// if answer incorrect show the correct answer 
-//if time is up game stops and user can save the game
-//check the score

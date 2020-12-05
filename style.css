@@ -1,5 +1,5 @@
 body {
-    background: lightgrey;
+    background: #242526;
 }
 .start_btn,
 .rules_b,
@@ -45,7 +45,7 @@ body {
 
  {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    height: 40px;
+    height: 30px;
     width: 100%;
     border-bottom: 1px solid transparent;
     padding: 0 45px;
@@ -124,6 +124,7 @@ body {
  {
     display: none;
     width: 550px;
+    justify-content: space-between;
     background: #fff;
     border-radius: 5px;
    
@@ -137,9 +138,9 @@ body {
 .questions_title
 {
     z-index: 99;
-    height: 70px;
+    height: 30px;
     padding: 0 15px;
-    margin-top: 30px;
+    margin-top: 20px;
     background: #fff;
     text-align: center;
     justify-content: space-between;
@@ -154,10 +155,10 @@ body {
 
 .score,
 .timer_counts {
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     justify-content: space-between;
-    padding: 10px;
+    padding: 5px;
 }
 .score span {
     color: lightseagreen;
@@ -191,7 +192,7 @@ body {
 }
 
 .result_box {
-    display: none;
+display: none;
 background: #fff;
 width: 450px;
 padding: 25px;
