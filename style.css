@@ -32,7 +32,8 @@ body {
 
 }
 .rules_b.active_rules,
-.question_box.active {
+.question_box.active,
+.result_box.active_results {
     z-index: 5;
     opacity: 1;
     pointer-events: auto;
@@ -96,6 +97,7 @@ body {
     cursor: pointer;
     color: #fff;
 }
+
 
 #qbutton:hover
 {
@@ -194,7 +196,7 @@ body {
 .result_box {
 display: none;
 background: #fff;
-width: 450px;
+width: 550px;
 padding: 25px;
 border-radius: 5px;
 justify-content: space-between;

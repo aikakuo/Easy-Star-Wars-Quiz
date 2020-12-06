@@ -15,9 +15,13 @@ var queBox = document.querySelector('.question_box')
 var score = document.querySelector('.score')
 var exitBtn = document.querySelector('.quit_game')
 var nextQue = document.querySelector('.next_question')
+var submitAnswer = document.querySelector('.submit_answer')
+var resultBox = document.querySelector('.result_box')
+
+
 
 var queCount = 0;
-var score = 0
+var queNum = 1;
 
 //start game 
 startBtn.addEventListener( "click", function(){
@@ -27,21 +31,24 @@ startBtn.addEventListener( "click", function(){
 nextBtn.addEventListener( "click", function(){
     queBox.classList.add("active")
     showQuestions(0)//shows the questions function  
+    
  })
 //exit the game goes back to start page
  exitBtn.addEventListener( "click", function(){
-    rulesBox.classList.remove("active_rules")  
+    rulesBox.classList.remove("active_rules") 
+    
+
  })
 
 
- //next question button questions_box must change 5 times 
+//next question button questions_box must change 5 times 
 nextQue.addEventListener( "click", function(){
    if (queCount < questions.length -1) {
    queCount++
    showQuestions(queCount)}//shows the questions function
 
    else {
-      console.log('complete')
+      resultBox.classList.add('active_results')
    }
    
 }) 
@@ -57,43 +64,26 @@ function showQuestions(index) {
   '<div class="option">' + questions[index].options[1] + '<span></span></div>' + '<div class="option">' + questions[index].options[2] + '<span></span></div>' + '<div class="option">' + questions[index].options[3] + '<span></span></div>'
 
   optionsList.innerHTML = optionTags 
-  queText.innerHTML = queTags
+  queText.innerHTML = queTags 
+  
+//   var queOption = Array.from(document.querySelectorAll(".option"))
+// console.log(queOption)
+//   queOption.forEach(options => {
+//      var num = options.dataset['number']
+    
+  }
 
-var option = optionsList.querySelectorAll('.option')
-for (var i = 0; i < option.length; i++)
-option[i].setAttribute('onclick', 'showAnswer(this)')  
-}
-
-function showAnswer() {
-   var usersChoice = answer.textContent;
-   var correctAnswer = questions[queCount].answer;
-   var allOptions = optionsList.children.length
-      if(usersChoice === correctAnswer) {
-         answer.classList.add('correct');
-         console.log('answer is correct')
-      } 
-      // else {
-      //    answer.classList.add('incorrect');
-      //    console.log(' answer is incorrect')
-      // }
-}
-
-// for (var i = 0; i < allOptions; i++) {
-//    optionsList.children[i].classList.add('disabled')
-// }
-
-
-
-//  function showScore() {
-
-//    var totalScore = queBox.querySelector(".total_score")
-//    var scoreTags = '<div class="score">Score :<span>' + queCount + '</span>/<span>' + questions.length + '</span></div>'
+//   var queOption = Array.from(document.querySelectorAll(".option"))
+// queOption.addEventListener('click', e => {
    
-//    totalScore.innerHTML = scoreTags
-//  }
+// })
 
 
-
+//   var queOption = optionsList.querySelectorAll(".option")
+// for (var i = 0; i < queOption.length; i++) {
+//    queOption[i].setAttribute('onclick','optionSelected()')
+// }
+  
 
 
 
