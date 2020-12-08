@@ -21,7 +21,7 @@ var resultBox = document.querySelector('.result_box')
 
 
 var queCount = 0;
-var score = 0
+
 
 //start game 
 startBtn.addEventListener( "click", function(){
@@ -31,6 +31,7 @@ startBtn.addEventListener( "click", function(){
 nextBtn.addEventListener( "click", function(){
     queBox.classList.add("active")
     showQuestions(0)//shows the questions function  
+    timer(60)
     
  })
 //exit the game goes back to start page
@@ -45,7 +46,11 @@ nextBtn.addEventListener( "click", function(){
 nextQue.addEventListener( "click", function(){
    if (queCount < questions.length -1) {
    queCount++
-   showQuestions(queCount)}//shows the questions function
+   showQuestions(queCount)
+   timer(count)
+   
+}//shows the questions function
+   
 
    else {
       resultBox.classList.add('active_results')
@@ -74,21 +79,41 @@ function showQuestions(index) {
 
   }
 
-
+  var score = document.querySelector(".score")
   function showAnswer(answer) {
    var usersChoice = answer.textContent
    var correctAns = questions[queCount].answer
-
+   var score = 0
    if (usersChoice === correctAns) {
-      console.log('correct')
+      // console.log('correct')
       answer.classList.add('correct')
-   } else {
-      console.log('incorrect')
-      answer.classList.add('incorrect')
-   }
-  
+     
 
-  }
+      }
+     
+   
+
+   else {
+      // console.log('incorrect')
+      answer.classList.add('incorrect')
+      // if answer incorrect show correct answer
+      
+      }}
+   
+function timer() {
+var timeCount = document.getElementById('set-timer')
+
+var count = 60
+var timesUp = 0
+setInterval(function() {
+    count--
+    timeCount.innerText = 'Time Left : ' + count
+    timesUp === count
+    return count
+    
+
+}, 1000) }
+  
 
 
 
@@ -141,20 +166,5 @@ var questions = [{
 
 
 
-// // // timer function
 
-// var div = document.getElementById('set-timer')
-// var count = 60
-
-// setInterval(function() {
-//     count--
-//     div.innerText = count + ' seconds have passed'
-//     var timesup = 0
-//     if(count==timesup){
-//         return count;
-//      }
-// }, 1000) 
-
-
-//for name submit use method .trim it will remove white space
 
