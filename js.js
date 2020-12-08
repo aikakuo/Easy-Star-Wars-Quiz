@@ -37,8 +37,6 @@ nextBtn.addEventListener( "click", function(){
 //exit the game goes back to start page
  exitBtn.addEventListener( "click", function(){
     rulesBox.classList.remove("active_rules") 
-
-
  })
 
 
@@ -47,7 +45,7 @@ nextQue.addEventListener( "click", function(){
    if (queCount < questions.length -1) {
    queCount++
    showQuestions(queCount)
-   timer(count)
+   
    
 }//shows the questions function
    
@@ -108,11 +106,14 @@ var timesUp = 0
 setInterval(function() {
     count--
     timeCount.innerText = 'Time Left : ' + count
-    timesUp === count
-    return count
+    if (timesUp === count
+      )
+    timeCount = 0 
     
+    
+}, 1000) 
 
-}, 1000) }
+}
   
 
 
