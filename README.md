@@ -1,6 +1,6 @@
 # Let's play Easy Star Wars Quiz Game
 
-1. This quiz has 10 questions
+1. This quiz has 5 questions
 
 2. You have 60 seconds to complete the quiz
 

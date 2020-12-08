@@ -21,7 +21,7 @@ var resultBox = document.querySelector('.result_box')
 
 
 var queCount = 0;
-var queNum = 1;
+var score = 0
 
 //start game 
 startBtn.addEventListener( "click", function(){
@@ -36,7 +36,7 @@ nextBtn.addEventListener( "click", function(){
 //exit the game goes back to start page
  exitBtn.addEventListener( "click", function(){
     rulesBox.classList.remove("active_rules") 
-    
+
 
  })
 
@@ -66,27 +66,35 @@ function showQuestions(index) {
   optionsList.innerHTML = optionTags 
   queText.innerHTML = queTags 
   
-//   var queOption = Array.from(document.querySelectorAll(".option"))
-// console.log(queOption)
-//   queOption.forEach(options => {
-//      var num = options.dataset['number']
-    
+  var options = optionsList.querySelectorAll('.option')
+  
+  for (var i = 0; i < options.length; i++) {
+    options[i].setAttribute('onclick', 'showAnswer(this)')
   }
 
-//   var queOption = Array.from(document.querySelectorAll(".option"))
-// queOption.addEventListener('click', e => {
-   
-// })
+  }
 
 
-//   var queOption = optionsList.querySelectorAll(".option")
-// for (var i = 0; i < queOption.length; i++) {
-//    queOption[i].setAttribute('onclick','optionSelected()')
-// }
+  function showAnswer(answer) {
+   var usersChoice = answer.textContent
+   var correctAns = questions[queCount].answer
+
+   if (usersChoice === correctAns) {
+      console.log('correct')
+      answer.classList.add('correct')
+   } else {
+      console.log('incorrect')
+      answer.classList.add('incorrect')
+   }
   
 
+  }
 
 
+
+
+  
+  
 
 //questions array with options and answers
 var questions = [{
@@ -129,11 +137,6 @@ var questions = [{
        'C-3PO'],
        answer:'Han Solo'
 }]
-// function selectAnswer {
-
-// }
-
-
 
 
 

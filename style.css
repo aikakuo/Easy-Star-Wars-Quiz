@@ -206,12 +206,12 @@ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
 .options_list .option.correct {
  color:white;
- background: green;
+ background: lightgreen;
 }
 
 .options_list .option.incorrect {
     color: white;
-    background: red;
+    background: #ff6a6a;
 
 }
 
