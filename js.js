@@ -76,28 +76,31 @@ function showQuestions(index) {
   }
 
   }
+//for loop is not working need to figure out 
+  var scoreCount = document.getElementById('score_count')
 
-  var score = document.querySelector(".score")
   function showAnswer(answer) {
    var usersChoice = answer.textContent
    var correctAns = questions[queCount].answer
    var score = 0
    if (usersChoice === correctAns) {
-      // console.log('correct')
+  
       answer.classList.add('correct')
      
-
-      }
-     
-   
-
+      var newScore = correctAns + score
+      score++
+      scoreCount.innerText = 'Score :' + score 
+      } 
    else {
-      // console.log('incorrect')
+     
       answer.classList.add('incorrect')
-      // if answer incorrect show correct answer
-      
+      score--
+     
+     
       }}
    
+
+//timer 60 - 0 at zero timer stops      
 function timer() {
 var timeCount = document.getElementById('set-timer')
 
@@ -110,18 +113,8 @@ setInterval(function() {
       )
     timeCount = 0 
     
-    
-}, 1000) 
-
-}
+}, 1000)}
   
-
-
-
-
-  
-  
-
 //questions array with options and answers
 var questions = [{
    count: 1,

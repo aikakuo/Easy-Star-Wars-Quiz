@@ -49,7 +49,7 @@
 
 
             <div class="total_score">
-                <div class="score">Score : <span>0</span></div>
+                <div id='score_count' class="score">Score : <span>0</span></div>
             </div>
             <div class="timer">
                 <div class="timer_counts">
@@ -97,18 +97,27 @@
 
 
     <!--Results Box-->
+
+    <form action="highscore.html">
     <div class="result_box">
         <div class="active_results">
             <div class="final_text">
-                The end of quiz
+                
             </div>
-            <div class="last_score"><span>try again</span></div>
+            <div class="last_score"><span></span></div>
+            
+                <label for="fname"> Name:</label><br>
+                <input type="text" id="fname" name="fname" value="Your Name"><br>
+                <input type="submit" value="Submit">
+            </form>
+
             <div class="buttons">
-                <button class="restart">Try Again</button>
-                <button id="qbutton" class="quit_game">Exit</button>
+                <button class="restart"><a href="index.html">Try Again</a></button>
+                
             </div>
         </div>
     </div>
+
     <!-- <script src="questions.js"></script> -->
     <script src="js.js"></script>
 </body>
