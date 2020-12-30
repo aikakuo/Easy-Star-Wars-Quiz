@@ -1,13 +1,3 @@
-//when start button pressed onclick function turns page to rules 
-//set up timer that counts down from 60 sec
-// set up score function
-// set up quiz box with questions 
-//once player choses answer set up on click function
-//if answer correct add to score 
-// if answer incorrect show the correct answer 
-//if time is up game stops and user can save the game
-//check the score
-
 var startBtn = document.querySelector('.start_btn')
 var rulesBox = document.querySelector('.rules_b')
 var nextBtn = document.querySelector('.next')
@@ -15,10 +5,9 @@ var queBox = document.querySelector('.question_box')
 var score = document.querySelector('.score')
 var exitBtn = document.querySelector('.quit_game')
 var nextQue = document.querySelector('.next_question')
-var submitAnswer = document.querySelector('.submit_answer')
+
 var resultBox = document.querySelector('.result_box')
-
-
+var localScore = document.querySelector('.local_score')
 
 var queCount = 0;
 
@@ -46,20 +35,25 @@ nextQue.addEventListener( "click", function(){
    queCount++
    showQuestions(queCount)
    
+  
    
 }//shows the questions function
    
 
    else {
       resultBox.classList.add('active_results')
+      timeCount = 0
    }
    
 }) 
- 
+
+var optionsList = document.querySelector(".options_list")
+
+
 function showQuestions(index) {
 //questions
   var queText = document.getElementById("questions-title");
-  var optionsList = document.querySelector(".options_list")
+  
   var queTags = "<span>" + questions[index].count +' . '+ questions[index].question + "</span>";
 //options list
 //targeting tags in DOM
@@ -74,45 +68,109 @@ function showQuestions(index) {
   for (var i = 0; i < options.length; i++) {
     options[i].setAttribute('onclick', 'showAnswer(this)')
   }
-
+  
   }
+  
 //for loop is not working need to figure out 
+
   var scoreCount = document.getElementById('score_count')
+  var score = 0
+  var scorePoints = 10
 
   function showAnswer(answer) {
    var usersChoice = answer.textContent
    var correctAns = questions[queCount].answer
-   var score = 0
+   var allOptions = optionsList.children.length
+   
+
    if (usersChoice === correctAns) {
-  
+    
       answer.classList.add('correct')
-     
-      var newScore = correctAns + score
-      score++
+      score += scorePoints
       scoreCount.innerText = 'Score :' + score 
+      localScore.innerText = 'Score : ' + score
+      
       } 
    else {
      
-      answer.classList.add('incorrect')
-      score--
-     
-     
-      }}
-   
+      answer.classList.add('incorrect') 
+      for (var i = 0; i < allOptions; i++) {
+         if (optionsList.children[i].textContent == correctAns)
+         optionsList.children[i].setAttribute('class', 'option correct')
+      }
+      
 
-//timer 60 - 0 at zero timer stops      
-function timer() {
+      } 
+    for (var i = 0; i< allOptions; i++ ){
+       optionsList.children[i].classList.add('disabled')
+    }
+   }
+//local storage 
+
+
+
+
+
+
+var saveScoreBtn = document.getElementById("save-score-btn")
+var submit = document.getElementById("submit")
+var highScore = document.querySelector(".high_score_box")
+var userInput = document.querySelector(".user_input")
+
+ saveScoreBtn.addEventListener("click", function(event){
+   event.preventDefault()
+   var userName = document.querySelector("#username").value
+   var userNameSpan = document.querySelector(".username_span")
+
+   userNameSpan.textContent = "Username : " + userName
+   function renderLastRegistered() {
+      
+      var localCount = localStorage.getItem("score")
+      var userName = localStorage.getItem("username".value)
+
+      if (userName === null) {
+         return;
+      }
+      
+   }
+   
+   // localStorage.setItem('score',score)
+   
+   localStorage.setItem("username", userName)
+   
+   localStorage.setItem('score', score)
+
+  
+  
+   userInput.textContent = "Username : " + userName + " " + "Score : " + score
+
+   submit.addEventListener( "click", function(){
+      event.preventDefault()
+      highScore.classList.add("active_high_score") 
+      userInput = localStorage.getItem("username", "score")
+     
+   })
+})
+
+
+//timer 60 - 0 at zero timer stops 
+var count = 60
+var timesUp = 0  
 var timeCount = document.getElementById('set-timer')
 
-var count = 60
-var timesUp = 0
+function timer() {
+
 setInterval(function() {
     count--
     timeCount.innerText = 'Time Left : ' + count
-    if (timesUp === count
-      )
-    timeCount = 0 
-    
+
+
+    if (timesUp === count 
+      ){
+         timeCount = 0
+         resultBox.classList.add('active_results')
+       
+   }   
 }, 1000)}
   
 //questions array with options and answers
@@ -156,9 +214,4 @@ var questions = [{
        'C-3PO'],
        answer:'Han Solo'
 }]
-
-
-
-
-
 

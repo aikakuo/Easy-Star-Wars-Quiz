@@ -28,7 +28,9 @@
             <div class="rules_list">
                 <div class="rules">1. You have <span>60 seconds</span> to complete the quiz</div>
                 <div class="rules">2. Earn points basis on your correct answers</div>
-                <div class="rules">3. Find out who got the highest score</div>
+                <div class="rules">3. Earn 10 points if answer correct </div>
+                <div class="rules">4. First SAVE your name and score then SUBMIT it to get high score </div>
+                <div class="rules">5. Once you start the game there is no turning back  </div>
                 <div class="rules"></div>
             </div>
             <div class="buttons">
@@ -43,21 +45,21 @@
     <!-- Questions Box -->
 
 
+    <div class="total_score">
+        <div id='score_count' class="score">Score : <span>0</span></div>
+    </div>
+    <div class="timer">
+        <div class="timer_counts">
+            <div id="set-timer">Time Left : <span>60</span>
 
+            </div>
+        </div>
+    </div>
     <div class="question_box">
         <div class="active">
 
 
-            <div class="total_score">
-                <div id='score_count' class="score">Score : <span>0</span></div>
-            </div>
-            <div class="timer">
-                <div class="timer_counts">
-                    <div id="set-timer">Time Left : <span>60</span>
-
-                    </div>
-                </div>
-            </div>
+           
             <div id="questions-title" class="questions_title">
                 <span></span></div>
             <div class="options_box">
@@ -98,23 +100,44 @@
 
     <!--Results Box-->
 
-    <form action="highscore.html">
+    
     <div class="result_box">
         <div class="active_results">
-            <div class="final_text">
-                
+                <input placeholder="Type your name.." id="username" type="text">
+                <div class="buttons">
+                <button id="save-score-btn" type="save" value="save">Save</button>
+                <button id="submit" >Submit</button>
+                <button class="restart"><a href="index.html">Play Again</a></button>
+                <div class="card">
+                    <div class="username_span">Username : </div>
+                   
+                    <div class="local_score"> Score : <span>0</span>
+                  </div>
+                   
+                </div>    
             </div>
-            <div class="last_score"><span></span></div>
-            
-                <label for="fname"> Name:</label><br>
-                <input type="text" id="fname" name="fname" value="Your Name"><br>
-                <input type="submit" value="Submit">
-            </form>
+        </div>
+    </div>
 
-            <div class="buttons">
-                <button class="restart"><a href="index.html">Try Again</a></button>
+        <div class="high_score_box">
+            <div class="active_high_score">
+                <h3>High Score</h3>
+
                 
+                    <div class="user_input">
+                    <lu>
+                    <li> </li>
+                    <li> </li>
+                </lu>
             </div>
+
+
+            </div>
+
+            <!--highscore div-->
+        </div>
+            </div>
+            
         </div>
     </div>
 
@@ -122,4 +145,4 @@
     <script src="js.js"></script>
 </body>
 
-</html>
+</html> 
