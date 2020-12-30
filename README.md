@@ -6,6 +6,6 @@
 
 3. You gain a score if answer is correct 
 
-4. You will lose a score if answer is incorrect 
+4. If your answer is incorrect correct answer will color "green"
 
-5. Add your name to compete with others 
+5. Once you start the game there is no turning back 
